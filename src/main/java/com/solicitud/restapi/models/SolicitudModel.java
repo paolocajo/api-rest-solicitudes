@@ -1,5 +1,6 @@
 package com.solicitud.restapi.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.util.Date;
@@ -19,6 +20,7 @@ public class SolicitudModel {
 
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date fechaRegistro;
 
     @Column(nullable = false)

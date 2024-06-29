@@ -1,5 +1,6 @@
 package com.solicitud.restapi.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
@@ -23,6 +24,7 @@ public class SolicitudFinalizadaModel {
 
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date fechaFinalizacion;
 
     public Long getIdFinalizado() {

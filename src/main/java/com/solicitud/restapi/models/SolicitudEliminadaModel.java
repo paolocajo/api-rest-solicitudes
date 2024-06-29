@@ -1,5 +1,6 @@
 package com.solicitud.restapi.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
@@ -26,6 +27,7 @@ public class SolicitudEliminadaModel {
 
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date fechaEliminacion;
 
     public Long getIdEliminado() {
