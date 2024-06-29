@@ -22,6 +22,10 @@ public class SolicitudFinalizadaController {
         return this.solicitudFinalizadaService.getSolicitudesFinalizadas();
     }
 
+    @GetMapping("/{id}")
+    public SolicitudFinalizadaModel getSolicitudFinalizadaById(@PathVariable("id") Long id) {
+        return this.solicitudFinalizadaService.getSolicitudFinalizadaById(id);
+    }
     @PostMapping
     public SolicitudFinalizadaModel crearSolicitud(@RequestBody SolicitudFinalizadaModel solicitud) {
         return solicitudFinalizadaService.guardarSolicitudFinalizada(solicitud);

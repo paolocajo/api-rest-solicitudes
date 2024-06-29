@@ -21,4 +21,7 @@ public class SolicitudFinalizadaService {
         return solicitudFinalizadaRepository.save(solicitud);
     }
 
+    public SolicitudFinalizadaModel getSolicitudFinalizadaById(Long id) {
+        return solicitudFinalizadaRepository.findById(id).orElse(null);
+    }
 }
