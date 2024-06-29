@@ -97,12 +97,22 @@ La documentación de la API está generada utilizando SpringDoc OpenAPI y puede 
    cd restapi
    ```
 
-2. Configura la conexión a la base de datos en el archivo `application.properties`:
+2. Configura la conexión a la base de datos en el archivo `application.yaml`:
 
-   ```properties
-   spring.datasource.url=jdbc:sqlserver://<HOST>:<PORT>;databaseName=<DB_NAME>
-   spring.datasource.username=<USERNAME>
-   spring.datasource.password=<PASSWORD>
+   ```yaml
+   spring:
+      datasource:
+        url: jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=dbsolicitud
+        username: <username>
+        password: <password>
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      jpa:
+        show-sql: true
+      mvc:
+        pathmatch:
+          matching-strategy: ant_path_matcher
+    server:
+      port: 8080
    ```
 
 3. Compila y ejecuta la aplicación:
